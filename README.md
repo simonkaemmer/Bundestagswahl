@@ -27,9 +27,9 @@ Dieses Projekt benötigt folgende Bibliotheken:
 - **Pandas** (`pip install pandas`)  
 - **MatPlotLib** (`pip install matplotlib`)  
 
-Alternativ kannst du alle Pakete mit:
+Alternativ kann man alle Pakete mit:
 ```bash
-pip install geopandas folium pandas shapely
+pip install geopandas folium pandas matplotlib
 ```
 installieren.
 
