@@ -3,11 +3,12 @@ Veranschaulichungen zur Bundestagswahl
 
 ## VoteMapPy
 Auf der [Website der Bundeswahlleiterin](https://www.bundeswahlleiterin.de/bundeswahlleiter.html) werden Daten zur Bundestagswahl veröffentlicht. Diese Daten werden vom Python-Script etwas gefiltert und dann auf eine Leaflet-Map projeziert. Dabei werden derzeit nur bestimmte Parteien berücksichtigt:
-- CDU `black`
-- CSU `black`
-- SPD `red`
-- B90/Gruene `green`
-- FDP `yellow`
-- Linke `#ff00ff`
+- CDU `Schwarz`
+- CSU `Schwarz`
+- SPD `Rot`
+- B90/Gruene `Grün`
+- FDP `Gelb`
+- Linke `Pink/Rosa`
 
+Die Daten stammen direkt aus dem [OpenData-Angebot in CSV-Format](https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata.html) [(kerg.csv)](https://bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata/btw25/csv/) der Bundeswahlleiterin.
 
