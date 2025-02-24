@@ -20,6 +20,7 @@ csv_data = "kerg.csv"
 data = pd.read_csv(csv_data, sep=";", skiprows=7)
 # Folgend sind erst eine Spalte (Zahl), dann der Bezeichner dieser Spalte aufgelistet, damit data.iloc(...) etwas klarer wird.
 # Das dient dazu, nur relevate Spalten (Wahlkreisname und Zweitstimme der jeweiligen Partei) zu filtern.
+# 22 SPD steht also dafür, dass in Spalte 22 (Zähler beginnt bei 0), in der CSV-Datei, die hierfür relevanten Zweitstimmen der SPD zu finden sind.
 # 1 Wahlkreis, 22 SPD, 26 CDU, 31 Grüne, 35 FDP, 38 AFD, 42 CSU, 46 Linke
 data = data.iloc[:, [1, 22, 26, 30, 34, 38, 42, 46]]
 data = data.fillna(0)
