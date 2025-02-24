@@ -18,3 +18,18 @@ Sowohl der Ordner für das Shapefile, als auch die Zähldaten müssen im selben 
 
 <ins>**Vorsicht: Dadurch, dass nur die oben genannten Parteien berücksichtigt werden, können Abweichungen auftreten.**</ins> <br>
 Beispiel: Wenn im Wahlkreis Berlin-Mitte eine Partei die nicht oben aufgeführt wurde, gewonnen hat, wird diese nicht berücksichtigt. Es wird also der Sieger der oben genannten angezeigt.
+
+### Benötigte Python-Pakete  
+Dieses Projekt benötigt folgende Bibliotheken:  
+
+- **GeoPandas** (`pip install geopandas`)  
+- **Folium** (`pip install folium`)  
+- **Pandas** (`pip install pandas`)  
+- **MatPlotLib** (`pip install matplotlib`)  
+
+Alternativ kannst du alle Pakete mit:
+```bash
+pip install geopandas folium pandas shapely
+```
+installieren.
+
