@@ -11,6 +11,8 @@ Die Daten stammen direkt aus dem [OpenData-Angebot im CSV-Format](https://www.bu
 Das [ShapeFile für Folium und GeoPandas](https://www.bundeswahlleiterin.de/bundestagswahlen/2025/wahlkreiseinteilung/downloads.html), welches die Wahlkreise definiert, kommt ebenfalls aus dem Portal der Bundeswahlleiterin.
 
 Als Ergebnis wird eine HTML-Datei erstellt, die im Browser angesehen werden kann.
+[➡ Hier geht’s zur Karte!](https://simonkaemmer.github.io/Bundestagswahl/VoteMapPy/BW2025_Wahlkreise.html)
+
 
 <ins>**Vorsicht: Dadurch, dass nur die oben genannten Parteien berücksichtigt werden, können Abweichungen auftreten.**</ins> <br>
 Beispiel: Wenn im Wahlkreis Berlin-Mitte eine Partei die nicht oben aufgeführt wurde, gewonnen hat, wird diese nicht berücksichtigt. Es wird also der Sieger der oben genannten angezeigt.
