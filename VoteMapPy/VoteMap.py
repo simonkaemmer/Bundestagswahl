@@ -1,7 +1,11 @@
 import geopandas as gpd
 import folium
 import pandas as pd
-import matplotlib.pyplot as plt
+import os
+
+# VS-Code nimmt je nach Workspace einen anderen Pfad, daher wird der Pfad des Skripts ermittelt
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
 
 # Farben für die Parteien
 party_colors = {
@@ -16,8 +20,7 @@ party_colors = {
 }
 
 # CSV-Datei einlesen und bereinigen
-csv_data = "kerg.csv"
-data = pd.read_csv(csv_data, sep=";", skiprows=7)
+data = pd.read_csv("../kerg.csv", sep=";", skiprows=7)
 # Folgend sind erst eine Spalte (Zahl), dann der Bezeichner dieser Spalte aufgelistet, damit data.iloc(...) etwas klarer wird.
 # Das dient dazu, nur relevate Spalten (Wahlkreisname und Zweitstimme der jeweiligen Partei) zu filtern.
 # 22 SPD steht also dafür, dass in Spalte 22 (Zähler beginnt bei 0), in der CSV-Datei, die hierfür relevanten Zweitstimmen der SPD zu finden sind.
@@ -81,15 +84,3 @@ for _, row in wahlkreise.iterrows():
     ).add_to(m)
 m.save("BW2025_Wahlkreise.html")
 
-# Charts und weitere Visualisierungen
-
-#chart_data = all_data["Bundesgebiet"]
-#labels = list(chart_data.keys())
-#values = list(chart_data.values())
-#colors = [party_colors[label] for label in labels]
-
-#plt.figure(figsize=(8,8))
-#plt.pie(values, labels=labels, colors=colors, autopct="%1.1f%%")
-
-#plt.title("Zweitstimmenverteilung, BW 2025")
-#plt.show()
