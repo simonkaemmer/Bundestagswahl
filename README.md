@@ -2,7 +2,7 @@
 Veranschaulichungen zur Bundestagswahl
 
 ## VoteMapPy
-Auf der [Website der Bundeswahlleiterin](https://www.bundeswahlleiterin.de/bundeswahlleiter.html) werden Daten zur Bundestagswahl veröffentlicht. Diese Daten werden vom Python-Script etwas gefiltert und dann auf eine Leaflet-Map projeziert. Dabei werden derzeit nur die Zweitstimme der Wähler für bestimmte Parteien berücksichtigt:
+Auf der [Website der Bundeswahlleiterin](https://www.bundeswahlleiterin.de/bundeswahlleiter.html) werden Daten zur Bundestagswahl veröffentlicht. Diese Daten werden vom Python-Script etwas gefiltert und dann auf eine Leaflet-Map projeziert. Dabei werden derzeit nur die Zweitstimmen der Wähler für folgende Parteien berücksichtigt:
 - CDU `Schwarz`
 - CSU `Schwarz`
 - SPD `Rot`
