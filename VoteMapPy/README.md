@@ -14,7 +14,7 @@ Als Ergebnis wird eine HTML-Datei erstellt, die im Browser angesehen werden kann
 [➡ Hier geht’s zur Karte!](https://simonkaemmer.github.io/Bundestagswahl/VoteMapPy/BW2025_Wahlkreise.html)
 
 
-<ins>**Vorsicht: Dadurch, dass nur die oben genannten Parteien berücksichtigt werden, können Abweichungen auftreten.**</ins> <br>
+<ins>**Vorsicht: Dadurch, dass nur die oben genannten Parteien berücksichtigt werden, können Abweichungen auftreten. Ebenfalls besteht die Möglichkeit, dass ich Fehler in der Programmierung oder Formatierung der Daten gemacht habe. Falls etwas auffällt, gerne melden!**</ins> <br>
 Beispiel: Wenn im Wahlkreis Berlin-Mitte eine Partei die nicht oben aufgeführt wurde, gewonnen hat, wird diese nicht berücksichtigt. Es wird also der Sieger der oben genannten angezeigt.
 
 ## Benötigte Python-Pakete  
