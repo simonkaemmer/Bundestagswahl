@@ -2,32 +2,7 @@
 Veranschaulichungen zur Bundestagswahl
 
 ## VoteMapPy
-Auf der [Website der Bundeswahlleiterin](https://www.bundeswahlleiterin.de/bundeswahlleiter.html) werden Daten zur Bundestagswahl veröffentlicht. Diese Daten werden vom Python-Script etwas gefiltert und dann auf eine Leaflet-Map projeziert. Dabei werden derzeit nur die Zweitstimmen der Wähler für folgende Parteien berücksichtigt:
-- CDU `Schwarz`
-- CSU `Schwarz`
-- SPD `Rot`
-- B90/Gruene `Grün`
-- FDP `Gelb`
-- Linke `Pink/Rosa`
+Python-Tool um die Wahlverteilung nach Wahlbezirken als HTML-Datei für alle gängigen Browser ersichtlich zu machen. Dazu werden Daten der Bundeswahlleiterin verwendet. Das Tool (mit Daten) sowie eine fertige Auswertung sind bereits im [Verzeichnis "VoteMapPy"](/VoteMapPy) verfügbar.
 
-Die Daten stammen direkt aus dem [OpenData-Angebot in CSV-Format](https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata.html) [(kerg.csv)](https://bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata/btw25/csv/) der Bundeswahlleiterin.
-
-Das [ShapeFile für GeoPandas](https://www.bundeswahlleiterin.de/bundestagswahlen/2025/wahlkreiseinteilung/downloads.html), welches die Wahlkreise definiert, kommt ebenfalls aus dem Portal der Bundeswahlleiterin.
-
-<ins>**Vorsicht: Dadurch, dass nur die oben genannten Parteien berücksichtigt werden, können Abweichungen auftreten.**</ins> <br>
-Beispiel: Wenn im Wahlkreis Berlin-Mitte eine Partei die nicht oben aufgeführt wurde, gewonnen hat, wird diese nicht berücksichtigt. Es wird also der Sieger der oben genannten angezeigt.
-
-### Benötigte Python-Pakete  
-Dieses Projekt benötigt folgende Bibliotheken:  
-
-- **GeoPandas** (`pip install geopandas`)  
-- **Folium** (`pip install folium`)  
-- **Pandas** (`pip install pandas`)  
-- **MatPlotLib** (`pip install matplotlib`)  
-
-Alternativ kann man alle Pakete mit:
-```bash
-pip install geopandas folium pandas matplotlib
-```
-installieren.
+Für weitere Infos, siehe [Readme im Verzeichnis "VoteMapPy"](VoteMapPy/README.md)
 
