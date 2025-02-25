@@ -28,8 +28,8 @@ data = pd.read_csv("../kerg.csv", sep=";", skiprows=7)
 data = data.iloc[:, [1, 22, 26, 30, 34, 38, 42, 46]]
 data = data.fillna(0)
 
-winner_data = {} # Speichert nur den Wahlkreis und dessen Gewinner
-all_data = {} # Speichert alle Wahlkreise und deren Daten
+winner_data = {}  # Speichert nur den Wahlkreis und dessen Gewinner
+all_data = {}  # Speichert alle Wahlkreise und deren Daten
 
 for index, row in data.iterrows():
 
@@ -44,7 +44,8 @@ for index, row in data.iterrows():
         "CSU": row.iloc[6],
         "Linke": row.iloc[7]
     }
-    vote_dict = {key: int(value) for key, value in vote_dict.items()} # Konvertiert die Werte in Integer
+    # Konvertiert die Werte in Integer
+    vote_dict = {key: int(value) for key, value in vote_dict.items()}
 
     if all(vote in (0, None) for vote in vote_dict.values()):
         winner_data[wahlkreis] = "None"
@@ -59,9 +60,10 @@ shapefile_path = "Shapefile/btw25_geometrie_wahlkreise_shp.shp"
 wahlkreise = gpd.read_file(shapefile_path)
 wahlkreise = wahlkreise.to_crs(epsg=4326)  # WGS84 Projektion
 
-map_center = [wahlkreise.geometry.centroid.y.mean(), wahlkreise.geometry.centroid.x.mean()]
+map_center = [wahlkreise.geometry.centroid.y.mean(
+), wahlkreise.geometry.centroid.x.mean()]
 
-m = folium.Map(location=map_center, zoom_start=6)
+m = folium.Map(location=map_center, zoom_start=7)
 
 for _, row in wahlkreise.iterrows():
 
@@ -69,12 +71,14 @@ for _, row in wahlkreise.iterrows():
         color = party_colors[winner_data[row["WKR_NAME"]]]
     else:
         color = "#ffffff"
-    
-    tooltip_text = f"<b>{row['WKR_NAME']}</b><br>" + "<br>".join([f"{k}: {v}" for k, v in all_data[row["WKR_NAME"]].items()])
+
+    tooltip_text = f"<b>{row['WKR_NAME']}</b><br>" + "<br>".join(
+        [f"{k}: {v}" for k, v in all_data[row["WKR_NAME"]].items()])
 
     folium.GeoJson(
         row["geometry"],
-        tooltip= tooltip_text,
+        tooltip=folium.Tooltip(
+            tooltip_text, style="font-size: 14px;"),
         style_function=lambda feature, color=color: {
             "fillColor": color,
             "color": "black",
@@ -82,5 +86,41 @@ for _, row in wahlkreise.iterrows():
             "fillOpacity": 0.5,
         }
     ).add_to(m)
-m.save("BW2025_Wahlkreise.html")
 
+legend_html = '''
+<div style="position: fixed;
+            bottom: 10px; left: 10px;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid black;
+            z-index:9999;
+            font-size:16px;">
+    <b>Parteien-Farben</b><br>
+    🔴 SPD<br>
+    ⚫ CDU/CSU<br>
+    🟢 B90/Grüne<br>
+    🔵 AfD<br>
+    🟡 FDP<br>
+    🟣 Linke<br>
+</div>
+'''
+m.get_root().html.add_child(folium.Element(legend_html))
+
+warning_html = '''
+<div style="position: fixed;
+            bottom: 10px; right: 10px;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid red;
+            z-index:9999;
+            font-size:16px;
+            font-weight: bold;
+            color: red;">
+    ⚠️ <b>Achtung:</b> Diese Karte ist Teil eines privaten Projekts. <br>
+    Trotz größter Sorgfalt kann es zu Fehlern kommen. <br>
+    Bitte nutzt die Informationen mit Vorsicht!
+</div>
+'''
+m.get_root().html.add_child(folium.Element(warning_html))
+
+m.save("BW2025_Wahlkreise.html")
