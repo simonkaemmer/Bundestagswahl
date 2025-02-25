@@ -6,7 +6,7 @@ Python-Tool um die Wahlverteilung nach Wahlbezirken als HTML-Datei für alle gä
 <br>
 [➡ Hier geht’s zur Karte!](https://simonkaemmer.github.io/Bundestagswahl/VoteMapPy/BW2025_Wahlkreise.html)
 
-Für weitere Infos, siehe [Readme im Verzeichnis "VoteMapPy"](VoteMapPy/README.md)
+Für weitere Infos, siehe [Readme im Verzeichnis "VoteMapPy"](VoteMapPy/README.md) <br>
 Das Repository mit allen Tools ist [hier](https://github.com/simonkaemmer/Bundestagswahl/edit/main/README.md) zu finden.
 
 
