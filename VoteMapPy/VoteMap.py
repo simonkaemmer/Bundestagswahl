@@ -107,17 +107,17 @@ legend_html = '''
 m.get_root().html.add_child(folium.Element(legend_html))
 
 warning_html = '''
-<div style="position: fixed;
-            bottom: 10px; right: 10px;
+<div style="position: relative;
+            width: 100%;
             background-color: white;
             padding: 10px;
-            border: 2px solid red;
-            z-index:9999;
-            font-size:16px;
+            border-top: 2px solid red;
+            text-align: center;
+            font-size: 14px;
             font-weight: bold;
             color: red;">
-    ⚠️ <b>Achtung:</b> Diese Karte ist Teil eines privaten Projekts. <br>
-    Trotz größter Sorgfalt kann es zu Fehlern kommen. <br>
+    ⚠️ <b>Achtung:</b> Diese Karte ist Teil eines privaten Projekts. 
+    Trotz größter Sorgfalt kann es zu Fehlern kommen. 
     Bitte nutzt die Informationen mit Vorsicht!
 </div>
 '''
